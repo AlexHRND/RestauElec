@@ -8,7 +8,7 @@ app.get('/fakeapi', (req, res, next) => {
     res.send('hello from the fakeapi')
 })
 
-app.get('/bast', (req, res, next) => {
+app.post('/bast', (req, res, next) => {
     res.send('hello from bast')
 })
 
