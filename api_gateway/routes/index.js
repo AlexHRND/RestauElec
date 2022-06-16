@@ -1,31 +1,39 @@
-const express = require("express")
+const express = require('express')
 const router = express.Router()
 const axios = require('axios')
 const registry = require('./registry.json')
+const fs = require('fs')
+const loadbalancer = require('../util/loadbalancer')
 
-router.all('/:api_name/:path', (req, res) => {
-    console.log(req.params.api_name)
-    try {
-        if (registry.services[req.params.api_name]) {
-            axios({
-                method: req.method,
-                url: registry.services[req.params.api_name].url + req.params.path,
-                headers: req.headers,
-                data: req.body
-            }).then((response) => {
-                res.send(response.data)
-            }).catch(error => { console.log(error) })
-        } else {
-            res.send("API name doesn't exist")
-        }
-    } catch (error) {
-        console.log(error)
-    }
+
+router.all('/:apiName/:path', (req, res) => {
+    const service = registry.services[req.params.apiName]
+        //if (service) {
+        //    if (!service.loadBalanceStrategy) {
+        //        service.loadBalanceStrategy = 'ROUND_ROBIN'
+        //        fs.writeFile('./routes/registry.json', JSON.stringify(registry), (error) => {
+        //             if (error) {
+        //                res.send("Couldn't write load balance strategy" + error)
+        //            }
+        //        })
+        //    }
+        //
+        //    const newIndex = loadbalancer[service.loadBalanceStrategy](service)
+        //const url = service.instances[newIndex].url
+    const url = "http://localhost:3001/"
+    console.log(url)
+    axios({
+            method: req.method,
+            url: url + req.params.path,
+            headers: req.headers,
+            data: req.body
+        }).then((response) => {
+            res.send(response.data)
+        }).catch(error => {
+            res.send("")
+        })
+        //} else {
+        //    res.send("API Name doesn't exist")
+        //}
 })
-
-router.post('/register', (req, res) => {
-    const registrationInfo = req.body
-
-})
-
 module.exports = router
