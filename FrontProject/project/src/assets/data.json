@@ -1,0 +1,58 @@
+{
+    "Restaurants": [
+      {
+        "name": "Mon restaurant 1",
+        "category": "Pizzaria",
+        "adresse": "150 chemin des nuages noirs",
+        "article":[ {
+            "name":"cocaé",
+            "prix":"10",
+            "description":"test",
+            "src":"https://www.online-image-editor.com/online-image-editor-logo.png"
+          },
+          {
+            "name":"cocaé",
+            "prix":"10",
+            "description":"test",
+            "src":"https://www.online-image-editor.com/online-image-editor-logo.png"
+          }]
+    
+      },
+      {
+        "name": "Mon restaurant 2",
+        "category": "Pizzaria",
+        "adresse": "150 chemin des nuages noirs",
+        "article":[ {
+            "name":"cocaé",
+            "prix":"10",
+            "description":"test",
+            "src":"https://www.online-image-editor.com/online-image-editor-logo.png"
+          },
+          {
+            "name":"cocaé",
+            "prix":"10",
+            "description":"test",
+            "src":"https://www.online-image-editor.com/online-image-editor-logo.png"
+          }]
+    
+      },
+      {
+        "name": "Mon restaurant 3",
+        "category": "Pizzaria",
+        "adresse": "150 chemin des nuages noirs",
+        "article":[ {
+            "name":"cocaé",
+            "prix":"10",
+            "description":"test",
+            "src":"https://www.online-image-editor.com/online-image-editor-logo.png"
+          },
+          {
+            "name":"cocaé",
+            "prix":"10",
+            "description":"test",
+            "src":"https://www.online-image-editor.com/online-image-editor-logo.png"
+          }]
+    
+      }
+    ] 
+  }

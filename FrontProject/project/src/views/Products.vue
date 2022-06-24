@@ -7,14 +7,21 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
 <div class="" style="margin-top: 125px;">
-	<!-- product -->
-	<div class="product-content product-wrap clearfix">
+</div>
+<v-col v-for="resto in restaurants">	<!-- product -->
+<div class="card">
+  <h5 class="card-header">{{resto.name}}</h5>
+  <div class="card-body">
+    <h5 class="card-title">{{resto.adresse}}</h5>
+  </div>
+</div>
+<v-col v-for="objs in resto.article">	<p><div class="product-content product-wrap clearfix">
 		<div class="row">
-				<div class="col-md-5 col-sm-12 col-xs-12" :class="test">
+				<div class="col-md-5 col-sm-12 col-xs-12">
 					<div class="product-image"> 
-						<img src="../assets/products-img/pizza.png" alt="194x228" class="img-responsive"> 
+						<img :src="objs.src" alt="194x228" class="img-responsive"> 
 						<span class="tag2 hot">
-							New
+							HOT
 						</span> 
 					</div>
 				</div>
@@ -22,307 +29,33 @@
 				<div class="product-deatil">
 						<h5 class="name">
 							<a href="#">
-								Product Name Title Here <span>Category</span>
+								Nom du restaurant : {{resto.name}}
 							</a>
 						</h5>
 						<p class="price-container">
-							<span>$99</span>
+							<span>{{objs.prix}}</span>
 						</p>
 						<span class="tag1"></span> 
 				</div>
 				<div class="description">
-					<p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
+					<p>{{objs.description}}</p>
 				</div>
 				<div class="product-info smart-form">
 					<div class="row">
 						<div class="col-md-6 col-sm-6 col-xs-6"> 
-							<a href="javascript:void(0);" class="btn btn-success">Add to cart</a>
+							<a href="javascript:void(0);" class="btn btn-success">Add to card</a>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-6">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div></p></v-col>
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    
 	<!-- end product -->
-</div>
-<div class="">
-	<!-- product -->
-	<div class="product-content product-wrap clearfix">
-		<div class="row">
-				<div class="col-md-5 col-sm-12 col-xs-12">
-					<div class="product-image"> 
-						<img src="../assets/products-img/burger.png" alt="194x228" class="img-responsive"> 
-						<span class="tag2 hot">
-							New
-						</span> 
-					</div>
-				</div>
-				<div class="col-md-7 col-sm-12 col-xs-12">
-				<div class="product-deatil">
-						<h5 class="name">
-							<a href="#">
-								Product Name Title Here <span>Category</span>
-							</a>
-						</h5>
-						<p class="price-container">
-							<span>$99</span>
-						</p>
-						<span class="tag1"></span> 
-				</div>
-				<div class="description">
-					<p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-				</div>
-				<div class="product-info smart-form">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-6"> 
-							<a href="javascript:void(0);" class="btn btn-success">Add to cart</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end product -->
-</div>
-<div class="">
-	<!-- product -->
-	<div class="product-content product-wrap clearfix">
-		<div class="row">
-				<div class="col-md-5 col-sm-12 col-xs-12">
-					<div class="product-image"> 
-						<img src="../assets/products-img/burger.png" alt="194x228" class="img-responsive"> 
-						<span class="tag2 hot">
-							New
-						</span> 
-					</div>
-				</div>
-				<div class="col-md-7 col-sm-12 col-xs-12">
-				<div class="product-deatil">
-						<h5 class="name">
-							<a href="#">
-								Product Name Title Here <span>Category</span>
-							</a>
-						</h5>
-						<p class="price-container">
-							<span>$99</span>
-						</p>
-						<span class="tag1"></span> 
-				</div>
-				<div class="description">
-					<p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-				</div>
-				<div class="product-info smart-form">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-6"> 
-							<a href="javascript:void(0);" class="btn btn-success">Add to cart</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end product -->
-</div>
-<div class="">
-	<!-- product -->
-	<div class="product-content product-wrap clearfix">
-		<div class="row">
-				<div class="col-md-5 col-sm-12 col-xs-12">
-					<div class="product-image"> 
-						<img src="../assets/products-img/burger.png" alt="194x228" class="img-responsive"> 
-						<span class="tag2 hot">
-							HOT
-						</span> 
-					</div>
-				</div>
-				<div class="col-md-7 col-sm-12 col-xs-12">
-				<div class="product-deatil">
-						<h5 class="name">
-							<a href="#">
-								Product Name Title Here <span>Category</span>
-							</a>
-						</h5>
-						<p class="price-container">
-							<span>$99</span>
-						</p>
-						<span class="tag1"></span> 
-				</div>
-				<div class="description">
-					<p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-				</div>
-				<div class="product-info smart-form">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-6"> 
-							<a href="javascript:void(0);" class="btn btn-success">Add to cart</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end product -->
-</div>
-<div class="">
-	<!-- product -->
-	<div class="product-content product-wrap clearfix">
-		<div class="row">
-				<div class="col-md-5 col-sm-12 col-xs-12">
-					<div class="product-image"> 
-						<img src="../assets/products-img/burger.png" alt="194x228" class="img-responsive"> 
-						<span class="tag2 hot">
-							HOT
-						</span> 
-					</div>
-				</div>
-				<div class="col-md-7 col-sm-12 col-xs-12">
-				<div class="product-deatil">
-						<h5 class="name">
-							<a href="#">
-								Product Name Title Here <span>Category</span>
-							</a>
-						</h5>
-						<p class="price-container">
-							<span>$99</span>
-						</p>
-						<span class="tag1"></span> 
-				</div>
-				<div class="description">
-					<p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-				</div>
-				<div class="product-info smart-form">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-6"> 
-							<a href="javascript:void(0);" class="btn btn-success">Add to cart</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end product -->
-</div>
-<div class="">
-	<!-- product -->
-	<div class="product-content product-wrap clearfix">
-		<div class="row">
-				<div class="col-md-5 col-sm-12 col-xs-12">
-					<div class="product-image"> 
-						<img src="../assets/products-img/burger.png" alt="194x228" class="img-responsive"> 
-						<span class="tag2 hot">
-							HOT
-						</span> 
-					</div>
-				</div>
-				<div class="col-md-7 col-sm-12 col-xs-12">
-				<div class="product-deatil">
-						<h5 class="name">
-							<a href="#">
-								Product Name Title Here <span>Category</span>
-							</a>
-						</h5>
-						<p class="price-container">
-							<span>$99</span>
-						</p>
-						<span class="tag1"></span> 
-				</div>
-				<div class="description">
-					<p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-				</div>
-				<div class="product-info smart-form">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-6"> 
-							<a href="javascript:void(0);" class="btn btn-success">Add to cart</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end product -->
-</div>
-<div class="">
-	<!-- product -->
-	<div class="product-content product-wrap clearfix">
-		<div class="row">
-				<div class="col-md-5 col-sm-12 col-xs-12">
-					<div class="product-image"> 
-						<img src="../assets/products-img/tacos.png" alt="194x228" class="img-responsive"> 
-						<span class="tag2 hot">
-							New
-						</span> 
-					</div>
-				</div>
-				<div class="col-md-7 col-sm-12 col-xs-12">
-				<div class="product-deatil">
-						<h5 class="name">
-							<a href="#">
-								Product Name Title Here <span>Category</span>
-							</a>
-						</h5>
-						<p class="price-container">
-							<span>$99</span>
-						</p>
-						<span class="tag1"></span> 
-				</div>
-				<div class="description">
-					<p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-				</div>
-				<div class="product-info smart-form">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-6"> 
-							<a href="javascript:void(0);" class="btn btn-success">Add to cart</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end product -->
-</div>
-<div class="">
-	<!-- product -->
-	<div class="product-content product-wrap clearfix">
-		<div class="row">
-				<div class="col-md-5 col-sm-12 col-xs-12">
-					<div class="product-image"> 
-						<img src="../assets/products-img/soda.png" alt="194x228" class="img-responsive"> 
-						<span class="tag2 hot">
-							HOT
-						</span> 
-					</div>
-				</div>
-				<div class="col-md-7 col-sm-12 col-xs-12">
-				<div class="product-deatil">
-						<h5 class="name">
-							<a href="#">
-								Product Name Title Here <span>Category</span>
-							</a>
-						</h5>
-						<p class="price-container">
-							<span>$99</span>
-						</p>
-						<span class="tag1"></span> 
-				</div>
-				<div class="description">
-					<p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-				</div>
-				<div class="product-info smart-form">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-6"> 
-							<a href="javascript:void(0);" class="btn btn-success">Add to cart</a>
-						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end product -->
-</div>
+    </v-col>
 </div>
   </div>
     </section>
@@ -331,10 +64,16 @@
 </template>
 
 <script>
+import dataJSON from '../assets/data.json'
 // @ is an alias to /src
 export default {
   name: "Home",
   components: {},
+  data() {
+    return {
+      restaurants: dataJSON.Restaurants,
+    };
+  },
 };
 </script>
 
