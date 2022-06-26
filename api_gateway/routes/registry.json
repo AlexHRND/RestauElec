@@ -7,7 +7,7 @@
                     "protocol": "http",
                     "host": "localhost",
                     "port": 3002,
-                    "url": "http://localhost:3002/",
+                    "url": "http://localhost:8080/",
                     "enabled": true
                 },
                 {
@@ -15,7 +15,7 @@
                     "protocol": "http",
                     "host": "localhost",
                     "port": 3001,
-                    "url": "http://localhost:3001/",
+                    "url": "http://localhost:8081/",
                     "enabled": true
                 }
             ],

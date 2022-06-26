@@ -23,7 +23,7 @@ router.all('/:apiName/:path', (req, res) => {
         const url = service.instances[newIndex].url
             //const url = "http://localhost:8000"
         const date = new Date();
-        console.log(url + req.params.path + date.toISOString())
+        console.log(url + req.params.path, " ", date.toISOString())
 
         axios({
             method: req.method,
