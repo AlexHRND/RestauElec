@@ -1,18 +1,69 @@
 <template>
-  <div class="home">
-<Product/>
-  </div>
-  <Footer/>
-</template>
+<div class="home">
+    <section class="hero">
+      <div class="container py-5">
 
+  <!-- For demo purpose -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+<div class="" style="margin-top: 125px;">
+</div>
+<v-col v-for="resto in restaurants">	<!-- product -->
+<div class="card">
+  <h5 class="card-header">{{resto.name}}</h5>
+  <div class="card-body">
+    <h5 class="card-title">Adresse du restaurant : {{resto.adresse}}</h5>
+  </div>
+</div>
+<v-col v-for="objs in resto.article">	<p><div class="product-content product-wrap clearfix">
+		<div class="row">
+				<div class="col-md-5 col-sm-12 col-xs-12">
+					<div class="product-image"> 
+						<img :src="objs.src" alt="194x228" class="img-responsive"> 
+					</div>
+				</div>
+				<div class="col-md-7 col-sm-12 col-xs-12">
+				<div class="product-deatil">
+						<h5 class="name">
+							<a href="#">
+								Nom du restaurant : {{resto.name}}
+							</a>
+						</h5>
+						<p class="price-container">
+							<span>{{objs.prix}} €</span>
+						</p>
+						<span class="tag1"></span> 
+				</div>
+				<div class="description">
+					<p>Description du produit : {{objs.description}}</p>
+				</div>
+				<div class="product-info smart-form">
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-6"> 
+							<a href="javascript:void(0);" class="btn btn-primary">Ajouter au panier</a>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div></p></v-col>
+
+    
+	<!-- end product -->
+    </v-col>
+</div>
+  </div>
+    </section>
+    <section><p></p></section>
+  </div>
+</template>
 <script>
 import dataJSON from '../assets/data.json'
-import Footer from '../components/footer.vue';
-import Product from '../components/Product.vue'
 // @ is an alias to /src
 export default {
-     name: "Products",
-    components: { Footer,Product},
+  name: "product",
   data() {
     return {
       restaurants: dataJSON.Restaurants,

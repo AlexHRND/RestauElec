@@ -3,7 +3,8 @@ import Home from "../views/Home.vue";
 import Products from "../views/Products.vue";
 import Auth from "../views/Auth.vue";
 import Inscrip from "../views/Inscrip.vue";
-import Ins_Res from "../views/Ins_Res.vue"
+import Ins_Res from "../views/Ins_Res.vue";
+import Compte from "../views/Compte.vue"
 
 
 const routes = [
@@ -31,6 +32,11 @@ const routes = [
     path: "/",
     name: "Ins_Res",
     component: Ins_Res,
+  },
+  {
+    path: "/",
+    name: "Compte",
+    component: Compte,
   },
 ];
 

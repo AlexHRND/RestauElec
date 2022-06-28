@@ -10,6 +10,7 @@
       <li><router-link class="link" :to="{name :'Auth'}">Connexion</router-link></li>
       <li><router-link class="link" :to="{name :'Inscrip'}">Inscription</router-link></li>
       <li><router-link class="link" :to="{name :'Products'}">Produits</router-link></li>
+      <li><router-link class="link" :to="{name :'Compte'}">Compte</router-link></li>
     </ul>
    
     <div class="icon">
@@ -18,9 +19,10 @@
     <transition name="mobile-nav">
     <ul v-show="mobileNav" class="dropdown-nav">
       <li><router-link class="link" :to="{name :'Home'}">Home</router-link></li>
-      <li><router-link class="link" :to="{name :''}">About</router-link></li>
-      <li><router-link class="link" :to="{name :''}">Porfolio</router-link></li>
-      <li><router-link class="link" :to="{name :''}">Contact</router-link></li>
+      <li><router-link class="link" :to="{name :'Auth'}">Connexion</router-link></li>
+      <li><router-link class="link" :to="{name :'Inscrip'}">Inscription</router-link></li>
+      <li><router-link class="link" :to="{name :'Products'}">Produits</router-link></li>
+      <li><router-link class="link" :to="{name :'Compte'}">Comtpe</router-link></li>
     </ul>
     </transition>
   </nav>
@@ -128,7 +130,7 @@ header {
     letter-spacing: 3px;
     color: #fff;
     font-family: Times New Roman, sans-serif;
-    text-shadow: 1px 1px 1px #000000, 1px 1px 4px #2980b9;
+    
       
   }
   .link{
@@ -185,7 +187,7 @@ header {
     width: 100%;
     height: 100%;
     max-width: 250px;
-    background-color: rgba(255, 255, 255, 0.452);
+    background-color: rgb(255, 255, 255);
     top: 10%;
     left: 0;
     text-align: center;

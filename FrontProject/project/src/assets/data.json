@@ -1,7 +1,7 @@
 {
     "Restaurants": [
       {
-        "name": "Mon restaurant 1",
+        "name": "Kebab",
         "category": "Pizzaria",
         "adresse": "150 chemin des nuages noirs",
         "article":[ {
@@ -14,25 +14,25 @@
             "name":"cocaé",
             "prix":"10",
             "description":"test",
-            "src":"https://www.online-image-editor.com/online-image-editor-logo.png"
+            "src":"https://doucefrugalite.files.wordpress.com/2020/06/les-sodas.jpg"
           }]
     
       },
       {
-        "name": "Mon restaurant 2",
+        "name": "La Pizza de chez Doumé",
         "category": "Pizzaria",
         "adresse": "150 chemin des nuages noirs",
         "article":[ {
             "name":"cocaé",
             "prix":"10",
             "description":"test",
-            "src":"https://www.online-image-editor.com/online-image-editor-logo.png"
+            "src":"https://res.cloudinary.com/hv9ssmzrz/image/fetch/c_fill,f_auto,h_630,q_auto,w_1200/https://s3-eu-west-1.amazonaws.com/images-ca-1-0-1-eu/tag_photos/original/889/pizza_flickr_4932057475_2a9ce50750_b.jpg"
           },
           {
             "name":"cocaé",
             "prix":"10",
             "description":"test",
-            "src":"https://www.online-image-editor.com/online-image-editor-logo.png"
+            "src":"https://www.hachette.fr/sites/default/files/burger-verrecchia.jpg"
           }]
     
       },
@@ -44,7 +44,7 @@
             "name":"cocaé",
             "prix":"10",
             "description":"test",
-            "src":"https://www.online-image-editor.com/online-image-editor-logo.png"
+            "src":"https://doucefrugalite.files.wordpress.com/2020/06/les-sodas.jpg"
           },
           {
             "name":"cocaé",
