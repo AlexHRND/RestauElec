@@ -3,7 +3,7 @@
   <nav>
     <div class="branding">
       <img src="@/assets/logo.png">
-      <h1>CESI FOOD</h1>
+      <h1>CESI EATS</h1>
     </div>
     <ul v-show="!mobile" class="navigation">
       <li><router-link class="link" :to="{name :'Home'}">Accueil</router-link></li>

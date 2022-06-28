@@ -1,185 +1,261 @@
 <template>
-  <div class="home">
-    <section class="hero">
-      <div class="hero-text container">
-        <div class="container">
-	<div class="d-flex justify-content-center h-100">
-		<div class="card">
-			<div class="d-flex justify-content-center links">
-				<h3>Inscription</h3>
-			</div>
-			<div class="card-body">
-				<form>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
-						</div>
-						<input type="text" class="form-control" placeholder="Email">
-						
-					</div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
-						</div>
-						<input type="password" class="form-control" placeholder="Mot de passe">
-					</div>
-					<div class="form-group">
-						<input type="submit" value="Connexion" class="btn float-right login_btn">
-					</div>
-				</form>
-			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Déjà un compte ? <router-link class="link" :to="{name :'Auth'}">Connexion</router-link>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-      </div>
-    </section>
-    <section><p></p></section>
-  </div>
+<html>
+
+
+<body>
+<Inscription/>
+</body>
+</html>
+<Footer/>
 </template>
 
 <script>
+import dataJSON from '../assets/data.json'
+import Footer from '../components/footer.vue';
+import Inscription from '../components/Inscription.vue'
 // @ is an alias to /src
 export default {
-  name: "Home",
-  components: {},
-};
+     name: "Products",
+    components: { Footer, Inscription},
+}
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css?family=Numans');
-
-html,body{
-background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-height: 100%;
-font-family: 'Numans', sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  color: #1a1f36;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Ubuntu,sans-serif;
 }
-
-.container{
-height: 100%;
-align-content: center;
+body {
+    min-height: 100%;
+    background-color: #ffffff;
 }
-
-.card{
-height: 370px;
-margin-top: auto;
-margin-bottom: auto;
-width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
+h1 {
+    letter-spacing: -1px;
+    margin-top: 125px;
 }
-
-.social_icon span{
-font-size: 60px;
-margin-left: 10px;
-color: #FFC312;
+a {
+  color: #5469d4;
+  text-decoration: unset;
 }
-
-.social_icon span:hover{
-color: white;
-cursor: pointer;
-}
-
-.card-header h3{
-color: white;
-}
-
-.social_icon{
-position: absolute;
-right: 20px;
-top: -45px;
-}
-
-.input-group-prepend span{
-width: 50px;
-background-color: #FFC312;
-color: black;
-border:0 !important;
-}
-
-input:focus{
-outline: 0 0 0 0  !important;
-box-shadow: 0 0 0 0 !important;
-
-}
-
-.remember{
-color: white;
-}
-
-.remember input
-{
-width: 20px;
-height: 20px;
-margin-left: 15px;
-margin-right: 5px;
-}
-
-.login_btn{
-color: black;
-background-color: #FFC312;
-width: 100px;
-}
-
-.login_btn:hover{
-color: black;
-background-color: white;
-}
-
-.links{
-color: white;
-}
-
-.links a{
-margin-left: 4px;
-}
-.hero {
-  background-image: url("../assets/hero-bg.png");
-  background-attachment: fixed;
-  position: relative;
-  height: 100vh;
-  img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
-  .hero-text {
-    height: 100%;
+.login-root {
+    background: #fff;
     display: flex;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.loginbackground {
+    min-height: 692px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+.flex-flex {
+    display: flex;
+}
+.align-center {
+  align-items: center; 
+}
+.center-center {
+  align-items: center;
+  justify-content: center;
+}
+.box-root {
+    box-sizing: border-box;
+}
+.flex-direction--column {
+    -ms-flex-direction: column;
     flex-direction: column;
+}
+.loginbackground-gridContainer {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: [start] 1fr [left-gutter] (86.6px)[16] [left-gutter] 1fr [end];
+    grid-template-columns: [start] 1fr [left-gutter] repeat(16,86.6px) [left-gutter] 1fr [end];
+    -ms-grid-rows: [top] 1fr [top-gutter] (64px)[8] [bottom-gutter] 1fr [bottom];
+    grid-template-rows: [top] 1fr [top-gutter] repeat(8,64px) [bottom-gutter] 1fr [bottom];
     justify-content: center;
+    margin: 0 -2%;
+    transform: rotate(-12deg) skew(-12deg);
+}
+.box-divider--light-all-2 {
+    box-shadow: inset 0 0 0 2px #e3e8ee;
+}
+.box-background--blue {
+    background-color: #5469d4;
+}
+.box-background--white {
+  background-color: #ffffff; 
+}
+.box-background--blue800 {
+    background-color: #212d63;
+}
+.box-background--gray100 {
+    background-color: #e3e8ee;
+}
+.box-background--cyan200 {
+    background-color: #7fd3ed;
+}
+.padding-top--64 {
+  padding-top: 64px;
+}
+.padding-top--24 {
+  padding-top: 24px;
+}
+.padding-top--48 {
+  padding-top: 48px;
+}
+.padding-bottom--24 {
+  padding-bottom: 24px;
+}
+.padding-horizontal--48 {
+  padding: 48px;
+
+}
+.padding-bottom--15 {
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+
+.flex-justifyContent--center {
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.formbg {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 448px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+}
+span {
+    display: block;
+    font-size: 20px;
+    line-height: 28px;
+    color: #1a1f36;
+}
+label {
+    margin-bottom: 10px;
+}
+.reset-pass a,label {
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+}
+.reset-pass > a {
+    text-align: right;
+    margin-bottom: 10px;
+}
+.grid--50-50 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+}
+
+.field input {
+    font-size: 16px;
+    line-height: 28px;
+    padding: 8px 16px;
+    width: 100%;
+    min-height: 44px;
+    border: unset;
+    border-radius: 4px;
+    outline-color: rgb(84 105 212 / 0.5);
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+
+input[type="submit"] {
+    background-color: rgb(84, 105, 212);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, 
+                rgb(84, 105, 212) 0px 0px 0px 1px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
     color: #fff;
-    h4 {
-      text-transform: uppercase;
-      font-size: 22px;
-      padding-bottom: 4px;
-    }
-    h2 {
-      font-size: 50px;
-      @media (min-width: 550px) {
-        font-size: 80px;
-      }
-    }
-    hr:nth-child(2) {
-      max-width: 365px;
-      margin-bottom: 16px;
-    }
-    hr:nth-child(4) {
-      height: 6px;
-      background-color: #fff;
-      border: none;
-      max-width: 85px;
-      margin-top: 16px;
-    }
+    font-weight: 600;
+    cursor: pointer;
+}
+.field-checkbox input {
+    width: 20px;
+    height: 15px;
+    margin-right: 5px; 
+    box-shadow: unset;
+    min-height: unset;
+}
+.field-checkbox label {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+a.ssolink {
+    display: block;
+    text-align: center;
+    font-weight: 600;
+}
+.footer-link span {
+    font-size: 14px;
+    text-align: center;
+}
+.listing a {
+    color: #697386;
+    font-weight: 600;
+    margin: 0 10px;
+}
+
+.animationRightLeft {
+  animation: animationRightLeft 2s ease-in-out infinite;
+}
+.animationLeftRight {
+  animation: animationLeftRight 2s ease-in-out infinite;
+}
+.tans3s {
+  animation: animationLeftRight 3s ease-in-out infinite;
+}
+.tans4s {
+  animation: animationLeftRight 4s ease-in-out infinite;
+}
+
+@keyframes animationLeftRight {
+  0% {
+    transform: translateX(0px);
   }
-}
-h3{
-  margin-top: 5%;
-}
+  50% {
+    transform: translateX(1000px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+} 
+
+@keyframes animationRightLeft {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+} 
 </style>
- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
