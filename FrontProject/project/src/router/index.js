@@ -5,6 +5,7 @@ import Auth from "../views/Auth.vue";
 import Inscrip from "../views/Inscrip.vue";
 import Ins_Res from "../views/Ins_Res.vue";
 import Compte from "../views/Compte.vue"
+import Restaurant from "../views/Restaurant.vue"
 
 
 const routes = [
@@ -37,6 +38,11 @@ const routes = [
     path: "/",
     name: "Compte",
     component: Compte,
+  },
+  {
+    path: "/",
+    name: "Restaurant",
+    component : Restaurant,
   },
 ];
 

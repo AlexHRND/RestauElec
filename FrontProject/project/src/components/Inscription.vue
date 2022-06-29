@@ -89,13 +89,13 @@
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 </div>
                 <div class="field padding-bottom--24">
-                  <input type="submit" name="submit" value="Continuer">
+                  <input type="submit" name="submit" value="Valider">
                 </div> 
               </form>
             </div>
           </div>
           <div class="footer-link padding-top--24">
-            <span>Déjà un compte ?<router-link class="link" :to="{name :'Auth'}"> Connexion</router-link></span>
+            <span id="bot">Déjà un compte ?<router-link class="link" :to="{name :'Auth'}"> Connexion</router-link></span>
           </div>
         </div>
       </div>
@@ -117,6 +117,10 @@ export default {
   box-sizing: border-box;
   word-wrap: break-word;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Ubuntu,sans-serif;
+}
+#bot
+{
+  margin-bottom: 25px;
 }
 body {
     min-height: 100%;

@@ -21,8 +21,8 @@
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                       <h4>John Doe</h4>
-                      <p class="text-secondary mb-1">Full Stack Developer</p>
-                      <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                      <p class="text-secondary mb-1">Client</p>
+                      <p class="text-muted font-size-sm">8 Boulevard Beranger, Marseille, 13015</p>
 
                     </div>
                   </div>
@@ -39,7 +39,7 @@
                       <h6 class="mb-0">Full Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                      John Doe
                     </div>
                   </div>
                   <hr>
@@ -48,7 +48,7 @@
                       <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      fip@jukmuh.al
+                      alexis.hernandez@gmail.com
                     </div>
                   </div>
                   <hr>
@@ -57,31 +57,24 @@
                       <h6 class="mb-0">Phone</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      (239) 816-9029
+                      +33785467896
                     </div>
                   </div>
                   <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Mobile</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      (320) 380-4539
-                    </div>
-                  </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Address</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Bay Area, San Francisco, CA
+                      8 Boulevard Beranger, Marseille, 13015
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info" target="__blank">Modifier</a>
+                      <a class="btn btn-info" target="__blank">Modifier mon compte</a>
+                      <router-link id="left" class="link" :to="{name :'Restaurant'}">    Modifier mes articles</router-link>
                     </div>
                   </div>
                 </div>
@@ -100,6 +93,9 @@ export default {
   }
   </script>
   <style lang="scss" scoped>
+#left{
+  margin-left: 25px;
+}
 .main-breadcrumb
 {
     margin-top: 150px;
@@ -158,7 +154,7 @@ body{
 }
 .home
 {
-    margin-bottom: 285px;
+    margin-bottom: 321px;
 }
 </style>
  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
