@@ -40,7 +40,7 @@
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Connexion</span>
+              <span class="padding-bottom--15">Inscription Restaurant</span>
               <form id="stripe-login">
                 <div class="field padding-bottom--24">
                   <label for="email">Email</label>
@@ -48,7 +48,47 @@
                 </div>
                 <div class="field padding-bottom--24">
                   <div class="grid--50-50">
-                    <label for="password">Password</label>
+                    <label for="password">Mot de passe</label>
+                    <div class="reset-pass">
+                    </div>
+                  </div>
+                  <input type="password" name="password">
+                </div>
+                <div class="field padding-bottom--24">
+                  <div class="grid--50-50">
+                    <label for="password">Nom</label>
+                    <div class="reset-pass">
+                    </div>
+                  </div>
+                  <input type="password" name="password">
+                </div>
+                <div class="field padding-bottom--24">
+                  <div class="grid--50-50">
+                    <label for="password">Prenom</label>
+                    <div class="reset-pass">
+                    </div>
+                  </div>
+                  <input type="password" name="password">
+                </div>
+                <div class="field padding-bottom--24">
+                  <div class="grid--50-50">
+                    <label for="password">Numero</label>
+                    <div class="reset-pass">
+                    </div>
+                  </div>
+                  <input type="password" name="password">
+                </div>
+                <div class="field padding-bottom--24">
+                  <div class="grid--50-50">
+                    <label for="password">Adresse</label>
+                    <div class="reset-pass">
+                    </div>
+                  </div>
+                  <input type="password" name="password">
+                </div>
+                 <div class="field padding-bottom--24">
+                  <div class="grid--50-50">
+                    <label for="password">Nom du restaurant</label>
                     <div class="reset-pass">
                     </div>
                   </div>
@@ -57,28 +97,27 @@
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 </div>
                 <div class="field padding-bottom--24">
-                  <input type="submit" name="submit" value="Continuer">
+                  <input type="submit" name="submit" value="Valider">
                 </div> 
               </form>
             </div>
           </div>
           <div class="footer-link padding-top--24">
-            <span>Pas de compte ? <router-link class="link" :to="{name :'Inscrip'}">Inscription</router-link></span>
-            <span>Vous êtes un restaurateur ? <router-link class="link" :to="{name :'Ins_Res'}">Inscription Restaurant</router-link></span>
-            <span>Vous êtes un livreur ? <router-link class="link" :to="{name :'Ins_Liv'}">Inscription Livreur</router-link></span>
+            <span id="bot">Déjà un compte ?<router-link class="link" :to="{name :'Auth'}"> Connexion</router-link></span>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 <script>
 export default {
-  name:"Authen"
+  name:"Inscrip_Res"
   }
   </script>
 
-<style lang="scss" scoped>
+  <style lang="scss" scoped>
 * {
   padding: 0;
   margin: 0;
@@ -87,13 +126,17 @@ export default {
   word-wrap: break-word;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Ubuntu,sans-serif;
 }
+#bot
+{
+  margin-bottom: 25px;
+}
 body {
     min-height: 100%;
     background-color: #ffffff;
 }
 h1 {
     letter-spacing: -1px;
-    margin-top: 150px;
+    margin-top: 125px;
 }
 a {
   color: #5469d4;
@@ -317,3 +360,4 @@ a.ssolink {
   }
 } 
 </style>
+  

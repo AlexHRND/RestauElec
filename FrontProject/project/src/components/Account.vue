@@ -36,7 +36,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Full Name</h6>
+                      <h6 class="mb-0">Nom / Prénom</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                       John Doe
@@ -64,17 +64,33 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Address</h6>
+                      <h6 class="mb-0">Addresse</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                       8 Boulevard Beranger, Marseille, 13015
                     </div>
                   </div>
                   <hr>
+                  <form>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Nouvelle adresse</label>
+                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Adresse">
+                    </div>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput2">Nouveau phone</label>
+                      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput2">Nouveau email</label>
+                      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Email">
+                    </div>
+                  </form>
                   <div class="row">
                     <div class="col-sm-12">
                       <a class="btn btn-info" target="__blank">Modifier mon compte</a>
                       <router-link id="left" class="link" :to="{name :'Restaurant'}">    Modifier mes articles</router-link>
+                      <button id="supp" type="button" class="btn btn-danger">Supprimer</button>
+                      <button id="supp" type="button" class="btn btn-danger">Déconnexion</button>
                     </div>
                   </div>
                 </div>
@@ -91,8 +107,14 @@
 export default {
   name:"Account"
   }
+
+  
   </script>
   <style lang="scss" scoped>
+#supp 
+{
+  margin-left: 25px;
+}  
 #left{
   margin-left: 25px;
 }

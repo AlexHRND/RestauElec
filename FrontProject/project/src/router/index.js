@@ -6,6 +6,7 @@ import Inscrip from "../views/Inscrip.vue";
 import Ins_Res from "../views/Ins_Res.vue";
 import Compte from "../views/Compte.vue"
 import Restaurant from "../views/Restaurant.vue"
+import Ins_Liv from "../views/Ins_Liv.vue"
 
 
 const routes = [
@@ -43,6 +44,11 @@ const routes = [
     path: "/",
     name: "Restaurant",
     component : Restaurant,
+  },
+  {
+    path: "/",
+    name: "Ins_Liv",
+    component : Ins_Liv,
   },
 ];
 

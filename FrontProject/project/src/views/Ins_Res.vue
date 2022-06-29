@@ -3,20 +3,21 @@
 
 
 <body>
-<Inscription/>
+<Inscrip_ResVue/>
 </body>
 </html>
 <Footer/>
 </template>
 
 <script>
+import Inscrip_ResVue from '@/components/Inscrip_Res.vue';
 import dataJSON from '../assets/data.json'
 import Footer from '../components/footer.vue';
-import Inscription from '../components/Inscription.vue'
+
 // @ is an alias to /src
 export default {
      name: "Products",
-    components: { Footer,Inscription},
+    components: { Footer,Inscrip_ResVue},
 }
 </script>
 
