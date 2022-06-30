@@ -65,10 +65,6 @@
           </div>
           <div class="footer-link padding-top--24">
             <span>Pas de compte ? <router-link class="link" :to="{ name: 'Inscrip' }">Inscription</router-link></span>
-            <span>Vous êtes un restaurateur ? <router-link class="link" :to="{ name: 'Ins_Res' }">Inscription Restaurant
-              </router-link></span>
-            <span>Vous êtes un livreur ? <router-link class="link" :to="{ name: 'Ins_Liv' }">Inscription Livreur
-              </router-link></span>
           </div>
         </div>
       </div>

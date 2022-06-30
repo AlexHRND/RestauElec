@@ -41,10 +41,10 @@
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
               <span class="padding-bottom--15">Inscription Restaurant</span>
-              <form id="stripe-login">
+              <form @submit.prevent="signInRes" id="stripe-login">
                 <div class="field padding-bottom--24">
                   <label for="email">Email</label>
-                  <input type="email" name="email">
+                  <input v-model="email" type="email" name="email">
                 </div>
                 <div class="field padding-bottom--24">
                   <div class="grid--50-50">
@@ -52,7 +52,7 @@
                     <div class="reset-pass">
                     </div>
                   </div>
-                  <input type="password" name="password">
+                  <input v-model="password" type="password" name="password">
                 </div>
                 <div class="field padding-bottom--24">
                   <div class="grid--50-50">
@@ -60,7 +60,7 @@
                     <div class="reset-pass">
                     </div>
                   </div>
-                  <input type="password" name="password">
+                  <input v-model="firstname" type="text" name="password">
                 </div>
                 <div class="field padding-bottom--24">
                   <div class="grid--50-50">
@@ -68,7 +68,7 @@
                     <div class="reset-pass">
                     </div>
                   </div>
-                  <input type="password" name="password">
+                  <input v-model="lastname" type="text" name="password">
                 </div>
                 <div class="field padding-bottom--24">
                   <div class="grid--50-50">
@@ -76,7 +76,7 @@
                     <div class="reset-pass">
                     </div>
                   </div>
-                  <input type="password" name="password">
+                  <input v-model="number" type="text" name="password">
                 </div>
                 <div class="field padding-bottom--24">
                   <div class="grid--50-50">
@@ -84,15 +84,15 @@
                     <div class="reset-pass">
                     </div>
                   </div>
-                  <input type="password" name="password">
+                  <input v-model="adress" type="text" name="password">
                 </div>
                  <div class="field padding-bottom--24">
                   <div class="grid--50-50">
-                    <label for="password">Nom du restaurant</label>
+                   <label for="password">Nom du restaurant</label>
                     <div class="reset-pass">
                     </div>
                   </div>
-                  <input type="password" name="password">
+                  <input type="text" name="password">
                 </div>
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 </div>
@@ -112,8 +112,29 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-  name:"Inscrip_Res"
+  name:"Inscrip_Res",
+   data(){
+    return{
+      firstname:'',
+      lastname:'',
+      number:'',
+      adresse:'',
+      email:'',
+      password:'',
+    };
+  },
+  methods: {
+    signInRes() {
+      axios
+        .post(
+          'http://localhost:8082/user/restaurateur',
+          { email: this.email, Password:this.password,Firstname: this.firstname,Lastname:this.lastname,Number:this.number, Address:this.adress }
+        )
+       this.$router.push('/');  
+}
+}
   }
   </script>
 

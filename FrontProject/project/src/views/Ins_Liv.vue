@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import InscriptionVue from '@/components/Inscription.vue';
+import InscriptionVue from '@/components/Inscrip_Liv.vue';
 import dataJSON from '../assets/data.json'
 import Footer from '../components/footer.vue';
-import Inscription from '@/components/Inscription.vue';
+import Inscription from '@/components/Inscrip_Liv.vue';
 
-// @ is an alias to /src
+// @ is an alias to /srcLiv
 export default {
      name: "Products",
     components: { Footer, Inscription},

@@ -40,7 +40,7 @@
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Inscription</span>
+              <span class="padding-bottom--15">Inscription Livreur </span>
               <form @submit.prevent="signIn" id="stripe-login">
                 <div class="field padding-bottom--24">
                   <label for="email">Email</label>
@@ -110,7 +110,7 @@
 <script>
 import axios from 'axios'
 export default {
-  name:"Inscription",
+  name:"Inscrip_Liv",
   data(){
     return{
       firstname:'',
@@ -125,7 +125,7 @@ export default {
     signIn() {
       axios
         .post(
-          'http://localhost:8082/user/client',
+          'http://localhost:8082/user/livreur',
           { email: this.email, Password:this.password,Firstname: this.firstname,Lastname:this.lastname,Number:this.number, Address:this.adress }
         )
        this.$router.push('/');  
