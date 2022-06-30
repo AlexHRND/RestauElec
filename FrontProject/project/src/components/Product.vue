@@ -12,7 +12,7 @@
 <div class="card">
   <h5 class="card-header">{{resto.name}}</h5>
   <div class="card-body">
-    <h5 class="card-title">Adresse du restaurant : {{resto.adresse}}</h5>
+    <h5 class="card-title">Adresse du restaurant : {{resto.adress}}</h5>
   </div>
 </div>
 <v-col v-for="objs in resto.article">	<p><div class="product-content product-wrap clearfix">
@@ -26,11 +26,11 @@
 				<div class="product-deatil">
 						<h5 class="name">
 							<a href="#">
-								Nom du restaurant : {{resto.name}}
+								Nom  : {{objs.name}}
 							</a>
 						</h5>
 						<p class="price-container">
-							<span>{{objs.prix}} €</span>
+							<span>{{objs.price}} €</span>
 						</p>
 						<span class="tag1"></span> 
 				</div>
@@ -59,7 +59,7 @@
     <section><p></p></section>
   </div>
 </template>
-<script>
+<!-- <script>
 import dataJSON from '../assets/data.json'
 // @ is an alias to /src
 export default {
@@ -70,7 +70,42 @@ export default {
     };
   },
 };
-</script>
+</script> -->
+<script>
+import axios from 'axios'
+
+export default {
+  name: 'Restaurants',
+  data(){
+    return{
+      restaurants:null,
+    }
+  },
+  mounted(){
+    axios
+    .get('http://localhost:8082/restaurant')
+    .then((response) => {
+      console.log(response)
+      this.restaurants = response.data;
+      console.log(this.restaurants)
+    }).catch(err =>{
+      console.log(err);
+    })
+  }}
+  </script>
+// import { onMounted, ref } from 'vue'
+// import axios from 'axios'
+// // import {Restaurant} from "../models/Restaurant"
+
+// // import  RestaurantService  from '@/services/RestaurantService'
+
+// // const restaurants = ref([]) //declarer la data
+// // let restaurantService = new RestaurantService();
+
+// onMounted(() => { axios
+//       .get('https://localhost:8081/restaurant/')
+//       .then(response => (restaurants.value = response)) })
+// // onMounted(() => { restaurants.value = restaurantService.getAllRestaurant(); })
 
 <style lang="scss" scoped>
 body

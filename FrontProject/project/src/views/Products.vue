@@ -13,14 +13,13 @@ import Product from '../components/Product.vue'
 export default {
      name: "Products",
     components: { Footer,Product},
-  data() {
-    return {
-      restaurants: dataJSON.Restaurants,
-    };
-  },
+//   data() {
+//     return {
+//       restaurants: dataJSON.Restaurants,
+//     };
+//   },
 };
 </script>
-
 <style lang="scss" scoped>
 body
 {

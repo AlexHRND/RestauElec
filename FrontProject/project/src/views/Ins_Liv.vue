@@ -18,7 +18,7 @@ import Inscription from '@/components/Inscription.vue';
 // @ is an alias to /src
 export default {
      name: "Products",
-    components: { Footer, Inscription },
+    components: { Footer, Inscription},
 }
 </script>
 
