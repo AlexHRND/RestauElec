@@ -125,7 +125,7 @@ export default {
     signIn() {
       axios
         .post(
-          'http://localhost:8082/user/livreur',
+          'http://localhost:8082/users/livreur',
           { email: this.email, Password:this.password,Firstname: this.firstname,Lastname:this.lastname,Number:this.number, Address:this.adress }
         )
        this.$router.push('/');  

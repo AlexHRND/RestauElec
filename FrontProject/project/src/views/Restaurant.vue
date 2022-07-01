@@ -8,14 +8,14 @@
 <div class="container">
 <div class="" style="margin-top: 125px;">
 </div>
-<v-col v-for="resto in restaurants">	<!-- product -->
+<!-- <v-col v-for="resto in restaurants">	product -->
 <div class="card">
-  <h5 class="card-header">{{resto.name}}</h5>
+  <h5 class="card-header">{{restaurants.name}}</h5>
   <div class="card-body">
-    <h5 class="card-title">Adresse du restaurant : {{resto.adresse}}</h5>
+    <h5 class="card-title">Adresse du restaurant : {{restaurants.adress}}</h5>
   </div>
 </div>
-<v-col v-for="objs in resto.article">	<p><div class="product-content product-wrap clearfix">
+<v-col v-for="objs in restaurants.article">	<p><div class="product-content product-wrap clearfix">
 		<div class="row">
 				<div class="col-md-5 col-sm-12 col-xs-12">
 					<div class="product-image"> 
@@ -30,7 +30,7 @@
     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nouveau nom">
   </div>
   <div class="form-group">
-    <label for="formGroupExampleInput2">Prix actuel: {{objs.prix}} €</label>
+    <label for="formGroupExampleInput2">Prix actuel: {{objs.price}} €</label>
     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nouveau Prix">
   </div>
   <div class="form-group">
@@ -52,7 +52,6 @@
 
     
 	<!-- end product -->
-    </v-col>
 </div>
   </div>
     </section>
@@ -60,16 +59,26 @@
   </div>
 </template>
 <script>
-import dataJSON from '../assets/data.json'
-// @ is an alias to /src
+import axios from 'axios'
+
 export default {
-  name: "product",
-  data() {
-    return {
-      restaurants: dataJSON.Restaurants,
-    };
+  name: 'Restaurants',
+  data(){
+    return{
+      restaurants:{},
+    }
   },
-};
+  mounted(){
+    axios
+    .get('http://localhost:8082/restaurants/62beb75f3627d0b36e24e39b')
+    .then((response) => {
+      console.log(response)
+      this.restaurants = response.data;
+      console.log(this.restaurants)
+    }).catch(err =>{
+      console.log(err);
+    })
+  }}
 </script>
 
 <style lang="scss" scoped>

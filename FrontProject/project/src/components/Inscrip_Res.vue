@@ -129,7 +129,7 @@ export default {
     signInRes() {
       axios
         .post(
-          'http://localhost:8082/user/restaurateur',
+          'http://localhost:8082/users/restaurateur',
           { email: this.email, Password:this.password,Firstname: this.firstname,Lastname:this.lastname,Number:this.number, Address:this.adress }
         )
        this.$router.push('/');  

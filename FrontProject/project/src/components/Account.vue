@@ -21,9 +21,11 @@
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
                       width="150">
                     <div class="mt-3">
-                      <h4>{{firstname}} {{lastname}}</h4>
-                      <p class="text-secondary mb-1">{{role}}</p>
-                      <p class="text-muted font-size-sm"><h3>{{address}}</h3></p>
+                      <h4>{{ firstname }} {{ lastname }}</h4>
+                      <p class="text-secondary mb-1">{{ role }}</p>
+                      <p class="text-muted font-size-sm">
+                      <h3>{{ address }}</h3>
+                      </p>
 
                     </div>
                   </div>
@@ -35,69 +37,78 @@
             <div class="col-md-8">
               <div class="card mb-3">
                 <!-- <v-col v-for="acc in account.user">-->
-                  <div class="card-body"> 
-                    <div class="row">
-                      <div class="col-sm-3">
-                        <h6 class="mb-0">Nom / Prénom</h6>
-                      </div>
-                      <div class="col-sm-9 text-secondary">
-                         {{lastname}} {{firstname}}
-                      </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Nom / Prénom</h6>
                     </div>
-                    <hr>
-                    <div class="row">
-                      <div class="col-sm-3">
-                        <h6 class="mb-0">Email</h6>
-                      </div>
-                      <div class="col-sm-9 text-secondary">
-                        {{email}}
-                      </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{ lastname }} {{ firstname }}
                     </div>
-                    <hr>
-                    <div class="row">
-                      <div class="col-sm-3">
-                        <h6 class="mb-0">Phone</h6>
-                      </div>
-                      <div class="col-sm-9 text-secondary">
-                       {{phone}}
-                      </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
                     </div>
-                    <hr>
-                    <hr>
-                    <div class="row">
-                      <div class="col-sm-3">
-                        <h6 class="mb-0">Addresse</h6>
-                      </div>
-                      <div class="col-sm-9 text-secondary">
-                        {{adresse}}
-                      </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{ email }}
                     </div>
-                    <hr>
-                    <form>
-                      <div class="form-group">
-                        <label for="formGroupExampleInput">Nouvelle adresse</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Adresse">
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Numéro de téléphone</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{ phone }}
+                    </div>
+                  </div>
+                  <hr>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Adresse</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{ adresse }}
+                    </div>
+                  </div>
+                  <hr>
+                  <form>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Nouvelle adresse</label>
+                      <input v-model="Newadresse" type="text" class="form-control" id="formGroupExampleInput"
+                        placeholder="Nouvelle adresse">
+                    </div>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput2">Nouveau numéro</label>
+                      <input v-model="Newphone" type="text" class="form-control" id="formGroupExampleInput2"
+                        placeholder="Nouveau Numéro de Telephone">
+                    </div>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput2">Nouveau email</label>
+                      <input v-model="Newmail" type="text" class="form-control" id="formGroupExampleInput2"
+                        placeholder="Nouvel Email">
+                    </div>
+                  </form>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <a v-on:click="UpdateUser" class="btn btn-info" target="__blank">Modifier mon compte</a>
+                      <router-link id="left" class="link" :to="{ name: 'Restaurant' }"> Modifier mes articles
+                      </router-link>
+                      <button v-on:click="Delete" id="supp" type="button" class="btn btn-danger">Supprimer</button>
+                      <button v-on:click="logout" id="supp" type="button" class="btn btn-danger">Déconnexion</button>
+                       <div v-if="this.role === 'ADMIN'">
+                       <p></p>
+                        <a class="btn btn-info" href="http://localhost:8082/swagger">acceder à l'API DOC</a>
                       </div>
-                      <div class="form-group">
-                        <label for="formGroupExampleInput2">Nouveau phone</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Phone">
-                      </div>
-                      <div class="form-group">
-                        <label for="formGroupExampleInput2">Nouveau email</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Email">
-                      </div>
-                    </form>
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <a class="btn btn-info" target="__blank">Modifier mon compte</a>
-                        <router-link id="left" class="link" :to="{ name: 'Restaurant' }"> Modifier mes articles
-                        </router-link>
-                        <button id="supp" type="button" class="btn btn-danger">Supprimer</button>
-                        <button id="supp" type="button" class="btn btn-danger">Déconnexion</button>
+                      <div v-else>
                       </div>
                     </div>
                   </div>
-                  <!-- </v-col>  -->
+                </div>
+                <!-- </v-col>  -->
               </div>
             </div>
           </div>
@@ -113,24 +124,69 @@ import jwt_decode from "jwt-decode";
 
 export default {
   name: 'Account',
+
   data() {
     return {
-      firstname:'',
-      lastname:'',
-      email:'',
-      phone:'',
-      addresse:'',
-      role:'',
-      token:{}
+      firstname: '',
+      lastname: '',
+      email: '',
+      phone: '',
+      addresse: '',
+      role: '',
+      token: {},
+      Newphone: '',
+      Newmail: '',
+      Newadresse: '',
+    }
+  },
+  methods: {
+    logout() {
+      localStorage.removeItem('jwtToken')
+      this.$router.push('/')
+    },
+     adminView() {
+      this.$router.push('/')
+    },
+    UpdateUser() {
+      const token = localStorage.getItem('jwtToken') //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsImVtYWlsIjoiZWRnYXJAdmlhY2VzaS5mciIsImZpcnN0X25hbWUiOiJjaGF1YnJvbiIsInJvbGUiOiJSRVNUQVVSQVRFVVIiLCJpYXQiOjE2NTY2MDQyMTN9.crvxfkfniRMj_cVeAIpHaNcZAOOJ9brSDFTMjaAWX1c"
+      console.log(token)
+      const decoded = jwt_decode(token)
+      const id = decoded.id
+      axios
+        .put('http://localhost:8082/users/' + id, { email: this.Newmail, Number: this.Newphone, Address: this.Newadresse })
+        .then((response) => {
+          console.log(response)
+          this.email = response.data.user.email
+          this.phone = response.data.user.Number
+          this.adresse = response.data.user.Address
+        }).catch(err => {
+          console.log(err);
+        })
+      this.$router.push('/');
+    },
+    Delete() {
+      const token = localStorage.getItem('jwtToken') //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsImVtYWlsIjoiZWRnYXJAdmlhY2VzaS5mciIsImZpcnN0X25hbWUiOiJjaGF1YnJvbiIsInJvbGUiOiJSRVNUQVVSQVRFVVIiLCJpYXQiOjE2NTY2MDQyMTN9.crvxfkfniRMj_cVeAIpHaNcZAOOJ9brSDFTMjaAWX1c"
+      console.log(token)
+      const decoded = jwt_decode(token)
+      const id = decoded.id
+      axios
+        .delete('http://localhost:8082/users/' + id)
+        .then((response) => {
+          console.log(response)
+        }).catch(err => {
+          console.log(err);
+        })
+        this.logout()
+      this.$router.push('/');
     }
   },
   mounted() {
-    const token  = localStorage.getItem('jwtToken') //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsImVtYWlsIjoiZWRnYXJAdmlhY2VzaS5mciIsImZpcnN0X25hbWUiOiJjaGF1YnJvbiIsInJvbGUiOiJSRVNUQVVSQVRFVVIiLCJpYXQiOjE2NTY2MDQyMTN9.crvxfkfniRMj_cVeAIpHaNcZAOOJ9brSDFTMjaAWX1c"
+    const token = localStorage.getItem('jwtToken') //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsImVtYWlsIjoiZWRnYXJAdmlhY2VzaS5mciIsImZpcnN0X25hbWUiOiJjaGF1YnJvbiIsInJvbGUiOiJSRVNUQVVSQVRFVVIiLCJpYXQiOjE2NTY2MDQyMTN9.crvxfkfniRMj_cVeAIpHaNcZAOOJ9brSDFTMjaAWX1c"
     console.log(token)
     const decoded = jwt_decode(token)
     const id = decoded.id
     axios
-      .get('http://localhost:8082/user/'+id)
+      .get('http://localhost:8082/users/' + id)
       .then((response) => {
         console.log(response)
         this.firstname = response.data.user.Firstname + ""

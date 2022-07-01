@@ -84,7 +84,7 @@
                     <div class="reset-pass">
                     </div>
                   </div>
-                  <input v-model="adress" type="text" name="password">
+                  <input v-model="adresse" type="text" name="password">
                 </div>
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 </div>
@@ -125,8 +125,8 @@ export default {
     signIn() {
       axios
         .post(
-          'http://localhost:8082/user/client',
-          { email: this.email, Password:this.password,Firstname: this.firstname,Lastname:this.lastname,Number:this.number, Address:this.adress }
+          'http://localhost:8082/users/client',
+          { email: this.email, Password:this.password,Firstname: this.firstname,Lastname:this.lastname,Number:this.number, Address:this.adresse }
         )
        this.$router.push('/');  
 }

@@ -87,7 +87,7 @@ export default {
     login() {
       axios
         .post(
-          'http://localhost:8082/user/login',
+          'http://localhost:8082/users/login',
           { email: this.email, Password: this.password }
         )
         .then((response) => {

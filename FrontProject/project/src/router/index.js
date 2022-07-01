@@ -9,52 +9,51 @@ import Restaurant from "../views/Restaurant.vue"
 import Ins_Liv from "../views/Ins_Liv.vue"
 
 
-const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home,
-  },
-  {
-    path: "/",
-    name: "Auth",
-    component: Auth,
-  },
-  {
-    path: "/",
-    name: "Products",
-    component: Products,
-  },
-  {
-    path: "/",
-    name: "Inscrip",
-    component: Inscrip,
-  },
-  {
-    path: "/",
-    name: "Ins_Res",
-    component: Ins_Res,
-  },
-  {
-    path: "/",
-    name: "Compte",
-    component: Compte,
-  },
-  {
-    path: "/",
-    name: "Restaurant",
-    component : Restaurant,
-  },
-  {
-    path: "/",
-    name: "Ins_Liv",
-    component : Ins_Liv,
-  },
+const routes = [{
+        path: "/",
+        name: "Home",
+        component: Home,
+    },
+    {
+        path: "/",
+        name: "Auth",
+        component: Auth,
+    },
+    {
+        path: "/",
+        name: "Products",
+        component: Products,
+    },
+    {
+        path: "/",
+        name: "Inscrip",
+        component: Inscrip,
+    },
+    {
+        path: "/",
+        name: "Ins_Res",
+        component: Ins_Res,
+    },
+    {
+        path: "/",
+        name: "Compte",
+        component: Compte,
+    },
+    {
+        path: "/",
+        name: "Restaurant",
+        component: Restaurant,
+    },
+    {
+        path: "/",
+        name: "Ins_Liv",
+        component: Ins_Liv,
+    },
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
+    history: createWebHistory(process.env.BASE_URL),
+    routes,
 });
 
 
