@@ -1,6 +1,10 @@
 # RestauElec
 Bloc élective logicielle A4 2022
 
+
+## API GATEWAY en cours de construction (branch: api_gateway_architectures)
+
+
 ## Travailler dans le projet : 
 
 créer nouvelle branche : 
