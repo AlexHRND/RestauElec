@@ -2,13 +2,14 @@ import express from 'express';
 require('./db_config/mongo.db');
 //import bodyParser from 'body-parser'
 // import cookieParser from "cookie-parser"
-// import cors from "cors"
+import cors from "cors"
 import {RestaurantRouter} from './routes/restaurant_route'
 import UserRoutes from './routes/user_route'
 import connection from "./db_config/sequelize.mysql";
 
 const router = express();
 
+router.use(cors());
 router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
 
@@ -25,8 +26,8 @@ router.use(express.urlencoded({ extended: false }));
 
 //app.use('/article', article)
 
-router.use('/restaurant', RestaurantRouter);
-router.use("/user", UserRoutes);
+router.use('/restaurants', RestaurantRouter);
+router.use("/users", UserRoutes);
 
 router.use(
   (
@@ -41,7 +42,7 @@ router.use(
 connection
   .sync()
   .then(() => {
-    console.log("Database successfully connected");
+    console.log("mySQL database successfully connected");
   })
   .catch((err) => {
     console.log("Error", err);
@@ -50,9 +51,9 @@ connection
 // app.get('/', function(req, res) {
 //     res.send('Default request')
 // })
-router.listen(8080, () =>{
-  console.log("api server is running on port: 8080")
+router.listen(8082, () =>{
+  console.log("api server is running on port: 8082")
 })
-router.listen(8081, () =>{
+router.listen(8083, () =>{
   console.log("api server is running on port: 8081")
 })

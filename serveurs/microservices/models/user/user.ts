@@ -40,4 +40,10 @@ export class User extends Model {
     
   })
   Password!: string;
+
+  @Column({
+    type: DataType.STRING,
+    
+  })
+  role!: string;
 }

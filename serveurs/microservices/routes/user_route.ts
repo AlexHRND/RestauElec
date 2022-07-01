@@ -1,23 +1,30 @@
 import { Router } from "express";
 
 import {
-  createToDo,
-  deleteToDo,
-  getAllToDo,
-  updateTodo,
-  getTodoById,
+  createUser,
+  deleteUser,
+  getAllUser,
+  updateUser,
+  getUserById,
+  logUser,
+  createRestaurantMan,
+  createDeliverer,
 } from "../controller/userController";
 
 const router = Router();
+//register
+router.post("/client", createUser);
+router.post("/restaurateur", createRestaurantMan);
+router.post("/livreur", createDeliverer);
 
-router.post("/", createToDo);
+router.post("/login",logUser);
 
-router.get("/", getAllToDo);
+router.get("/", getAllUser);
 
-router.get("/:id", getTodoById);
+router.get("/:id", getUserById);
 
-router.put("/:id", updateTodo);
+router.put("/:id", updateUser);
 
-router.delete("/:id", deleteToDo);
+router.delete("/:id", deleteUser);
 
 export default router;
