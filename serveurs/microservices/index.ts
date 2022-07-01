@@ -6,13 +6,16 @@ import cors from "cors"
 import {RestaurantRouter} from './routes/restaurant_route'
 import UserRoutes from './routes/user_route'
 import connection from "./db_config/sequelize.mysql";
+import swaggerui from "swagger-ui-express";
+import swaggerDocument from "./swagger.json";
+
 
 const router = express();
 
 router.use(cors());
 router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
-
+router.use ('/swagger', swaggerui.serve, swaggerui.setup(swaggerDocument));
 //app.use(bodyParser.json())
 //app.use(cookieParser());
 

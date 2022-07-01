@@ -1,0 +1,602 @@
+{
+    "openapi": "3.0.0",
+    "info": 
+    {
+        "title": "Microservices API documentation",
+        "description": "Api documentation guide for all the functional routes for the microservices api",
+        "version": "0.0.1"
+    },"components":
+    {
+       "schemas":
+       {
+            "User":
+            {
+                "properties": 
+                {
+                        "id":
+                        {
+                            "type": "integer"
+                        },
+                        "Firstname": 
+                        {
+                            "type": "string"
+                        },
+                        "Lastname": 
+                        {
+                            "type": "string"
+                        },
+                        "Address": 
+                        {
+                            "type": "string"
+                        },
+                        "Number": 
+                        {
+                            "type": "number"
+                        },
+                        "Email": 
+                        {
+                            "type": "string"
+                        },
+                        "Password": 
+                        {
+                            "type": "string"
+                        },
+                        "Role": 
+                        {
+                            "type": "string"
+                        }
+                }
+            },
+            "Restaurant":
+            {
+                "properties": 
+                {
+                        "id":
+                        {
+                            "type": "integer"
+                        },
+                        "name": 
+                        {
+                            "type":"string"
+                        },
+                        
+                        "category": 
+                        {
+                            "type": "string"
+                        },
+                        "adress" : 
+                        {
+                            "type": "string"
+                        },
+                        "articles": 
+                        {
+                            "type": "array"
+                        }
+                }
+            },
+
+            "Articles" :
+            {
+                "properties": 
+                {
+                    "name": 
+                    {
+                        "type": "string"
+                    },
+
+                    "price":
+                    {
+                        "type": "number"
+                    },
+                    "description":
+                    {
+                        "type":"string"
+                    },
+                    "src":
+                    {
+                        "type":"string"
+                    }
+                }
+            }
+
+
+       }
+       
+    },
+    "paths":  
+    {
+        "/users/client": {
+            "post": {
+                "tags": ["Users"],
+                "description": "Create a client",
+                "responses": {
+                    "200": 
+                    {
+                        "description": "Thanks for registering",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": 
+                                    {
+                                        "id":
+                                        {
+                                            "type": "integer"
+                                        },
+                                        "Firstname": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Lastname": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Address": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Number": 
+                                        {
+                                            "type": "number"
+                                        },
+                                        "Email": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Password": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Role": 
+                                        {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "example": 
+                                    {
+                                        "id": 1,
+                                        "Firstname": "Lionel",
+                                        "Lastname": "MARIE DELCASSE",
+                                        "Address": "222 Rue du Terrier",
+                                        "Number": "0641592550",
+                                        "Email": "lioneldelcasse@gmail.com",
+                                        "Password": "********",
+                                        "Role": "CLIENT"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "409": 
+                    {
+                        "description": "Existing User"
+                    },
+                    "500": 
+                    {
+                        "description": "Cannot register at the moment"
+                    }
+                }
+            }
+        },
+
+        "/users/restaurateur": 
+        {
+            "post": 
+            {
+                "tags": ["Users"],
+                "description": "Create a restaurant owner",
+                "responses": 
+                {
+                    "200": 
+                    {
+                        "description": "Thanks for registering",
+                        "content": 
+                        {
+                            "application/json": 
+                            {
+                                "schema": 
+                                {
+                                    "properties": 
+                                    {
+                                        "id":
+                                        {
+                                            "type": "integer"
+                                        },
+                                        "Firstname": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Lastname": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Address": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Number": 
+                                        {
+                                            "type": "number"
+                                        },
+                                        "Email": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Password": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Role": 
+                                        {
+                                            "type": "string"
+                                        }
+                                    },
+
+                                    "example": 
+                                    {
+                                        "id": 2,
+                                        "Firstname": "Alexis",
+                                        "Lastname": "Hernandez",
+                                        "Address": "150 chemin de la bastide tourelle",
+                                        "Number": "0770104191",
+                                        "email": "alexis.hernandez@viacesi.fr",
+                                        "Password": "********",
+                                        "Role": "RESTAURATEUR"
+                                    }
+                                }
+                            }
+                        }
+                    },
+
+                    "409": 
+                    {
+                        "description": "Existing User"
+                    },
+                    "500": 
+                    {
+                        "description": "Cannot register at the moment"
+                    }
+                }
+            }
+        },
+        "/users/livreur": 
+        {
+            "post": {
+                "tags": ["Users"],
+                "description": "Create a deliverer",
+                "responses": {
+                    "200": 
+                    {
+                        "description": "Thanks for registering",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": 
+                                    {
+                                        "id":
+                                        {
+                                            "type": "integer"
+                                        },
+                                        "Firstname": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Lastname": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Address": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Number": 
+                                        {
+                                            "type": "number"
+                                        },
+                                        "Email": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Password": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Role": 
+                                        {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "example": 
+                                    {
+                                        "id": 3,
+                                        "Firstname": "Bastien",
+                                        "Lastname": "SAHAKIAN",
+                                        "Address": "34, Boulevard Charles-Livon",
+                                        "Number": "0768593021",
+                                        "email": "bastien.sahakian@viacesi.fr",
+                                        "Password": "********",
+                                        "Role": "LIVREUR"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "409": 
+                    {
+                        "description": "Existing User"
+                    },
+                    "500": 
+                    {
+                        "description": "Cannot register at the moment"
+                    }
+
+                }
+            }
+        },
+        "/users/login": {
+            "post": {
+                "tags": ["Users"],
+                "description": "Login to the application",
+                "responses": 
+                {
+                    "200": 
+                    {
+                        "description": "Welcome to the application",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties":
+                                    {
+                                        
+                                        "Email": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Password": 
+                                        {
+                                            "type": "string"
+                                        }
+                                        
+                                    }
+                                  
+                                }
+                            }
+                        }
+                    },
+                    "400": 
+                    {
+                        "description": "Invalid Credentials"
+                    }
+                }
+            }
+        },
+        
+            "/users/get/:id": 
+        {
+            "get": 
+            {
+                "tags": ["Users"],
+                "description": "Get user by the id stored in the jwt token from the local storage",
+                "responses": 
+                {
+                    "200": 
+                    {
+                        "description": "User Successfully fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties":
+                                    {
+                                        
+                                        "Token": 
+                                        {
+                                            "type": "string"
+                                        }
+                                       
+                                        
+                                    },
+                                    "example": 
+                                    {
+                                        
+                                        
+                                        "Firstname": "Lionel",
+                                        "Lastname": "MARIE DELCASSE",
+                                        "Address": "222 Rue du Terrier",
+                                        "Number": "0641592550",
+                                        "Email": "lioneldelcasse@gmail.com",
+                                        "Role": "CLIENT"
+                                            
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        },
+        
+        "/users/update": 
+        {
+            
+            "put": {
+                "tags": ["Users"],
+                "description": "User can update his data once he is logged in",
+                "responses": {
+                    "200": {
+                        "description": "Informations Sucessfully updated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties":
+                                    {
+                                        
+                                        "Adress": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "Number": 
+                                        {
+                                            "type": "number"
+                                        }
+                                        
+                                    },
+                                    "example": 
+                                    {
+                                        
+                                        "Adress": "2 Rue Jean Racine",
+                                        "Number": "0783881065"     
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },        "/restaurant": 
+        {
+            "post": {
+                "tags": ["Restautants"],
+                "description": "Create a restaurant",
+                "responses": {
+                    "200": 
+                    {
+                        "description": "Thanks for registering",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": 
+                                    {
+                                        "name": 
+                                        {
+                                            "type":"string"
+                                        },
+
+                                        "category": 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "adress" : 
+                                        {
+                                            "type": "string"
+                                        },
+                                        "articles": 
+                                        {
+                                            "type": "array"
+                                        }
+                                    },
+                                    "example": 
+                                    {
+                                        "name": "Burger King",
+                                        "category": "Fast Food",
+                                        "address":"39 avenue Jean Giono",
+                                        "articles": 
+                                        [
+
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "409": 
+                    {
+                        "description": "Existing Restaurant"
+                    },
+                    "500": 
+                    {
+                        "description": "Cannot register the restaurant at the moment"
+                    }
+
+                }
+            }
+        },
+        "/restaurants": 
+        {
+            "get": {
+                "tags": ["Restautants"],
+                "description": "Get all restaurants",
+                "responses": {
+                    "200": 
+                    {
+                        "description": "Restaurants successfully fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                 
+                                    "example": 
+                                    {   "id" : 1,
+                                        "name": "Burger King",
+                                        "category": "Fast Food",
+                                        "address":"39 avenue Jean Giono",
+                                        "articles": 
+                                        [
+
+                                        ]
+                                        
+                                        
+                                      
+
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+
+                }
+            }
+        },
+
+        "/restaurants/:id": 
+        {
+            "get": {
+                "tags": ["Restautants"],
+                "description": "Get a restaurant by the id",
+                "responses": {
+                    "200": 
+                    {
+                        "description": "Thanks for registering",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": 
+                                    {
+                                       "id":
+                                       {
+                                        "type" :"integer"
+                                       }
+                                    },
+                                    "example": 
+                                    {
+                                        "name": "Burger King",
+                                        "category": "Fast DEHCJIshcood",
+                                        "address":"39 avenue Jean Giono",
+                                        "articles": 
+                                        [
+
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "409": 
+                    {
+                        "description": "Existing Restaurant"
+                    },
+                    "500": 
+                    {
+                        "description": "Cannot register the restaurant at the moment"
+                    }
+
+                }
+            }
+        }
+
+    }
+    
+}
+
+
+
