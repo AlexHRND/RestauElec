@@ -1,158 +1,122 @@
 {
     "openapi": "3.0.0",
-    "info": 
-    {
+    "info": {
         "title": "Microservices API documentation",
         "description": "Api documentation guide for all the functional routes for the microservices api",
         "version": "0.0.1"
-    },"components":
-    {
-       "schemas":
-       {
-            "User":
-            {
-                "properties": 
-                {
-                        "id":
-                        {
-                            "type": "integer"
-                        },
-                        "Firstname": 
-                        {
-                            "type": "string"
-                        },
-                        "Lastname": 
-                        {
-                            "type": "string"
-                        },
-                        "Address": 
-                        {
-                            "type": "string"
-                        },
-                        "Number": 
-                        {
-                            "type": "number"
-                        },
-                        "Email": 
-                        {
-                            "type": "string"
-                        },
-                        "Password": 
-                        {
-                            "type": "string"
-                        },
-                        "Role": 
-                        {
-                            "type": "string"
-                        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "Firstname": {
+                        "type": "string"
+                    },
+                    "Lastname": {
+                        "type": "string"
+                    },
+                    "Address": {
+                        "type": "string"
+                    },
+                    "Number": {
+                        "type": "number"
+                    },
+                    "Email": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "Role": {
+                        "type": "string"
+                    }
                 }
             },
-            "Restaurant":
-            {
-                "properties": 
-                {
-                        "id":
-                        {
-                            "type": "integer"
-                        },
-                        "name": 
-                        {
-                            "type":"string"
-                        },
-                        
-                        "category": 
-                        {
-                            "type": "string"
-                        },
-                        "adress" : 
-                        {
-                            "type": "string"
-                        },
-                        "articles": 
-                        {
-                            "type": "array"
-                        }
-                }
-            },
-
-            "Articles" :
-            {
-                "properties": 
-                {
-                    "name": 
-                    {
+            "Restaurant": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
                         "type": "string"
                     },
 
-                    "price":
-                    {
+                    "category": {
+                        "type": "string"
+                    },
+                    "adress": {
+                        "type": "string"
+                    },
+                    "articles": {
+                        "type": "array"
+
+                    }
+                }
+            },
+
+            "Articles": {
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+
+                    "price": {
                         "type": "number"
                     },
-                    "description":
-                    {
-                        "type":"string"
+                    "description": {
+                        "type": "string"
                     },
-                    "src":
-                    {
-                        "type":"string"
+                    "src": {
+                        "type": "string"
                     }
                 }
             }
 
 
-       }
-       
+        }
+
     },
-    "paths":  
-    {
+    "paths": {
         "/users/client": {
             "post": {
                 "tags": ["Users"],
                 "description": "Create a client",
                 "responses": {
-                    "200": 
-                    {
+                    "200": {
                         "description": "Thanks for registering",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "properties": 
-                                    {
-                                        "id":
-                                        {
+                                    "properties": {
+                                        "id": {
                                             "type": "integer"
                                         },
-                                        "Firstname": 
-                                        {
+                                        "Firstname": {
                                             "type": "string"
                                         },
-                                        "Lastname": 
-                                        {
+                                        "Lastname": {
                                             "type": "string"
                                         },
-                                        "Address": 
-                                        {
+                                        "Address": {
                                             "type": "string"
                                         },
-                                        "Number": 
-                                        {
+                                        "Number": {
                                             "type": "number"
                                         },
-                                        "Email": 
-                                        {
+                                        "Email": {
                                             "type": "string"
                                         },
-                                        "Password": 
-                                        {
+                                        "Password": {
                                             "type": "string"
                                         },
-                                        "Role": 
-                                        {
+                                        "Role": {
                                             "type": "string"
                                         }
                                     },
-                                    "example": 
-                                    {
+                                    "example": {
                                         "id": 1,
                                         "Firstname": "Lionel",
                                         "Lastname": "MARIE DELCASSE",
@@ -166,73 +130,54 @@
                             }
                         }
                     },
-                    "409": 
-                    {
+                    "409": {
                         "description": "Existing User"
                     },
-                    "500": 
-                    {
+                    "500": {
                         "description": "Cannot register at the moment"
                     }
                 }
             }
         },
 
-        "/users/restaurateur": 
-        {
-            "post": 
-            {
+        "/users/restaurateur": {
+            "post": {
                 "tags": ["Users"],
                 "description": "Create a restaurant owner",
-                "responses": 
-                {
-                    "200": 
-                    {
+                "responses": {
+                    "200": {
                         "description": "Thanks for registering",
-                        "content": 
-                        {
-                            "application/json": 
-                            {
-                                "schema": 
-                                {
-                                    "properties": 
-                                    {
-                                        "id":
-                                        {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
                                             "type": "integer"
                                         },
-                                        "Firstname": 
-                                        {
+                                        "Firstname": {
                                             "type": "string"
                                         },
-                                        "Lastname": 
-                                        {
+                                        "Lastname": {
                                             "type": "string"
                                         },
-                                        "Address": 
-                                        {
+                                        "Address": {
                                             "type": "string"
                                         },
-                                        "Number": 
-                                        {
+                                        "Number": {
                                             "type": "number"
                                         },
-                                        "Email": 
-                                        {
+                                        "Email": {
                                             "type": "string"
                                         },
-                                        "Password": 
-                                        {
+                                        "Password": {
                                             "type": "string"
                                         },
-                                        "Role": 
-                                        {
+                                        "Role": {
                                             "type": "string"
                                         }
                                     },
 
-                                    "example": 
-                                    {
+                                    "example": {
                                         "id": 2,
                                         "Firstname": "Alexis",
                                         "Lastname": "Hernandez",
@@ -247,66 +192,52 @@
                         }
                     },
 
-                    "409": 
-                    {
+                    "409": {
                         "description": "Existing User"
                     },
-                    "500": 
-                    {
+                    "500": {
                         "description": "Cannot register at the moment"
                     }
                 }
             }
         },
-        "/users/livreur": 
-        {
+        "/users/livreur": {
             "post": {
                 "tags": ["Users"],
                 "description": "Create a deliverer",
                 "responses": {
-                    "200": 
-                    {
+                    "200": {
                         "description": "Thanks for registering",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "properties": 
-                                    {
-                                        "id":
-                                        {
+                                    "properties": {
+                                        "id": {
                                             "type": "integer"
                                         },
-                                        "Firstname": 
-                                        {
+                                        "Firstname": {
                                             "type": "string"
                                         },
-                                        "Lastname": 
-                                        {
+                                        "Lastname": {
                                             "type": "string"
                                         },
-                                        "Address": 
-                                        {
+                                        "Address": {
                                             "type": "string"
                                         },
-                                        "Number": 
-                                        {
+                                        "Number": {
                                             "type": "number"
                                         },
-                                        "Email": 
-                                        {
+                                        "Email": {
                                             "type": "string"
                                         },
-                                        "Password": 
-                                        {
+                                        "Password": {
                                             "type": "string"
                                         },
-                                        "Role": 
-                                        {
+                                        "Role": {
                                             "type": "string"
                                         }
                                     },
-                                    "example": 
-                                    {
+                                    "example": {
                                         "id": 3,
                                         "Firstname": "Bastien",
                                         "Lastname": "SAHAKIAN",
@@ -320,12 +251,10 @@
                             }
                         }
                     },
-                    "409": 
-                    {
+                    "409": {
                         "description": "Existing User"
                     },
-                    "500": 
-                    {
+                    "500": {
                         "description": "Cannot register at the moment"
                     }
 
@@ -336,88 +265,74 @@
             "post": {
                 "tags": ["Users"],
                 "description": "Login to the application",
-                "responses": 
-                {
-                    "200": 
-                    {
+                "responses": {
+                    "200": {
                         "description": "Welcome to the application",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "properties":
-                                    {
-                                        
-                                        "Email": 
-                                        {
+                                    "properties": {
+
+                                        "Email": {
                                             "type": "string"
                                         },
-                                        "Password": 
-                                        {
+                                        "Password": {
                                             "type": "string"
                                         }
-                                        
+
                                     }
-                                  
+
                                 }
                             }
                         }
                     },
-                    "400": 
-                    {
+                    "400": {
                         "description": "Invalid Credentials"
                     }
                 }
             }
         },
-        
-            "/users/get/:id": 
-        {
-            "get": 
-            {
+
+        "/users/get/:id": {
+            "get": {
                 "tags": ["Users"],
                 "description": "Get user by the id stored in the jwt token from the local storage",
-                "responses": 
-                {
-                    "200": 
-                    {
+                "responses": {
+                    "200": {
                         "description": "User Successfully fetched",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "properties":
-                                    {
-                                        
-                                        "Token": 
-                                        {
+                                    "properties": {
+
+                                        "Token": {
                                             "type": "string"
                                         }
-                                       
-                                        
+
+
                                     },
-                                    "example": 
-                                    {
-                                        
-                                        
+                                    "example": {
+
+
                                         "Firstname": "Lionel",
                                         "Lastname": "MARIE DELCASSE",
                                         "Address": "222 Rue du Terrier",
                                         "Number": "0641592550",
                                         "Email": "lioneldelcasse@gmail.com",
                                         "Role": "CLIENT"
-                                            
+
                                     }
                                 }
                             }
                         }
-                        
+
                     }
                 }
             }
         },
-        
-        "/users/update": 
-        {
-            
+
+        "/users/update": {
+
             "put": {
                 "tags": ["Users"],
                 "description": "User can update his data once he is logged in",
@@ -427,24 +342,20 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "properties":
-                                    {
-                                        
-                                        "Adress": 
-                                        {
+                                    "properties": {
+
+                                        "Adress": {
                                             "type": "string"
                                         },
-                                        "Number": 
-                                        {
+                                        "Number": {
                                             "type": "number"
                                         }
-                                        
+
                                     },
-                                    "example": 
-                                    {
-                                        
+                                    "example": {
+
                                         "Adress": "2 Rue Jean Racine",
-                                        "Number": "0783881065"     
+                                        "Number": "0783881065"
                                     }
                                 }
                             }
@@ -452,45 +363,37 @@
                     }
                 }
             }
-        },        "/restaurant": 
-        {
+        },
+        "/restaurant": {
             "post": {
-                "tags": ["Restautants"],
+                "tags": ["Restaurants"],
                 "description": "Create a restaurant",
                 "responses": {
-                    "200": 
-                    {
+                    "200": {
                         "description": "Thanks for registering",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "properties": 
-                                    {
-                                        "name": 
-                                        {
-                                            "type":"string"
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
                                         },
 
-                                        "category": 
-                                        {
+                                        "category": {
                                             "type": "string"
                                         },
-                                        "adress" : 
-                                        {
+                                        "adress": {
                                             "type": "string"
                                         },
-                                        "articles": 
-                                        {
+                                        "articles": {
                                             "type": "array"
                                         }
                                     },
-                                    "example": 
-                                    {
+                                    "example": {
                                         "name": "Burger King",
                                         "category": "Fast Food",
-                                        "address":"39 avenue Jean Giono",
-                                        "articles": 
-                                        [
+                                        "address": "39 avenue Jean Giono",
+                                        "articles": [
 
                                         ]
                                     }
@@ -498,95 +401,144 @@
                             }
                         }
                     },
-                    "409": 
-                    {
+                    "409": {
                         "description": "Existing Restaurant"
                     },
-                    "500": 
-                    {
+                    "500": {
                         "description": "Cannot register the restaurant at the moment"
                     }
 
                 }
             }
         },
-        "/restaurants": 
-        {
+        "/restaurants": {
             "get": {
-                "tags": ["Restautants"],
+                "tags": ["Restaurants"],
                 "description": "Get all restaurants",
                 "responses": {
-                    "200": 
-                    {
+                    "200": {
                         "description": "Restaurants successfully fetched",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                 
-                                    "example": 
-                                    {   "id" : 1,
-                                        "name": "Burger King",
-                                        "category": "Fast Food",
-                                        "address":"39 avenue Jean Giono",
-                                        "articles": 
-                                        [
+
+                                    "example": {
+                                        "name": "Kebab",
+                                        "category": "Pizzaria",
+                                        "adresse": "150 chemin des nuages noirs",
+                                        "articles": [{
+                                                "article": [{
+                                                        "name": "Soda",
+                                                        "prix": "10",
+                                                        "description": "Coca",
+                                                        "src": "https://doucefrugalite.files.wordpress.com/2020/06/les-sodas.jpg"
+                                                    },
+                                                    {
+                                                        "name": "kebab",
+                                                        "prix": "9.5",
+                                                        "description": "Orangina",
+                                                        "src": "https://cdn.lebuteur.com/data/images/article/thumbs/large-connaissez-vous-tous-les-ingredients-des-sodas-5fb73.jpg"
+                                                    }
+                                                ]
+
+                                            },
+                                            {
+                                                "name": "La Pizza de chez Doumé",
+                                                "category": "Pizzaria",
+                                                "adresse": "150 chemin des nuages noirs",
+                                                "article": [{
+                                                        "name": "Pizza Arménienne",
+                                                        "prix": "10,5",
+                                                        "description": "Pizza avec viandes",
+                                                        "src": "https://res.cloudinary.com/hv9ssmzrz/image/fetch/c_fill,f_auto,h_630,q_auto,w_1200/https://s3-eu-west-1.amazonaws.com/images-ca-1-0-1-eu/tag_photos/original/889/pizza_flickr_4932057475_2a9ce50750_b.jpg"
+                                                    },
+                                                    {
+                                                        "name": "Bugger",
+                                                        "prix": "12",
+                                                        "description": "Burger Maison",
+                                                        "src": "https://www.hachette.fr/sites/default/files/burger-verrecchia.jpg"
+                                                    }
+                                                ]
+
+                                            },
+                                            {
+                                                "name": "Cafétaria Velantine",
+                                                "category": "Café",
+                                                "adresse": "150 chemin des nuages blancs",
+                                                "article": [{
+                                                        "name": "café",
+                                                        "prix": "2",
+                                                        "description": "café noir",
+                                                        "src": "https://img.passeportsante.net/1200x675/2021-05-03/i101986-cafe-nu.webp"
+                                                    },
+                                                    {
+                                                        "name": "café sucré",
+                                                        "prix": "3",
+                                                        "description": "café avec sucre",
+                                                        "src": "https://www.centromedicomanzanera.com/wp-content/uploads/2022/04/CAFE-Y-REPRODUCCION.jpg"
+                                                    }
+                                                ]
+
+                                            }
 
                                         ]
-                                        
-                                        
-                                      
 
-                                        
+
+
+
+
                                     }
                                 }
                             }
                         }
                     }
-                    
+
 
                 }
             }
         },
 
-        "/restaurants/:id": 
-        {
+        "/restaurants/:id": {
             "get": {
-                "tags": ["Restautants"],
+                "tags": ["Restaurants"],
                 "description": "Get a restaurant by the id",
                 "responses": {
-                    "200": 
-                    {
+                    "200": {
                         "description": "Thanks for registering",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "properties": 
-                                    {
-                                       "id":
-                                       {
-                                        "type" :"integer"
-                                       }
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        }
                                     },
-                                    "example": 
-                                    {
-                                        "name": "Burger King",
-                                        "category": "Fast DEHCJIshcood",
-                                        "address":"39 avenue Jean Giono",
-                                        "articles": 
-                                        [
-
+                                    "example": {
+                                        "name": "Cafétaria Valantine",
+                                        "category": "Café",
+                                        "adresse": "150 chemin des nuages blancs",
+                                        "articles": [{
+                                                "name": "café",
+                                                "prix": "2",
+                                                "description": "café noir",
+                                                "src": "https://img.passeportsante.net/1200x675/2021-05-03/i101986-cafe-nu.webp"
+                                            },
+                                            {
+                                                "name": "café sucré",
+                                                "prix": "3",
+                                                "description": "café avec sucre",
+                                                "src": "https://www.centromedicomanzanera.com/wp-content/uploads/2022/04/CAFE-Y-REPRODUCCION.jpg"
+                                            }
                                         ]
                                     }
                                 }
                             }
                         }
                     },
-                    "409": 
-                    {
+                    "409": {
                         "description": "Existing Restaurant"
                     },
-                    "500": 
-                    {
+                    "500": {
                         "description": "Cannot register the restaurant at the moment"
                     }
 
@@ -595,8 +547,5 @@
         }
 
     }
-    
+
 }
-
-
-
